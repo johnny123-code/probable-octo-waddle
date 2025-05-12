@@ -1,16 +1,26 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
     <title>Share Your Story</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-    <h1>Share Your Story</h1>
-    <form method="POST">
-        Name (optional): <input type="text" name="name"><br><br>
-        Your message: <br>
-        <textarea name="message" rows="5" cols="40" required></textarea><br><br>
-        <button type="submit">Submit</button>
-    </form>
-    <p><a href="{{ url_for('index') }}">Back to Home</a></p>
+    <div class="container">
+        <h1>Share Your Story</h1>
+        <form method="POST">
+            <label for="name">Name (optional):</label>
+            <input type="text" id="name" name="name">
+
+            <label for="message">Your Message:</label>
+            <textarea id="message" name="message" rows="6" required></textarea>
+
+            <button type="submit">Submit</button>
+        </form>
+
+        <div class="link-group">
+            <a href="{{ url_for('index') }}">← Back to Home</a>
+        </div>
+    </div>
 </body>
 </html>
