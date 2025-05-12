@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mental Health Support Hub</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Mental Health Support Hub</h1>
+    <p>Welcome! Read community stories or <a href="{{ url_for('submit') }}">share your own</a>.</p>
+    <p><a href="{{ url_for('resources') }}">Mental Health Resources</a></p>
+
+    <h2>Community Stories</h2>
+    {% for story in stories %}
+        <div class="story">
+            <strong>{{ story.name }}</strong>: {{ story.message }}
+        </div>
+    {% else %}
+        <p>No stories shared yet.</p>
+    {% endfor %}
+</body>
+</html>
